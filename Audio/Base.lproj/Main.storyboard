@@ -38,7 +38,7 @@
                                     <constraint firstAttribute="height" constant="142" id="MBG-yx-ZcM"/>
                                     <constraint firstAttribute="width" constant="161" id="hSf-GU-M1A"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="139"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="120"/>
                                 <state key="normal" title="◉">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -54,7 +54,7 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="142" id="hpV-FJ-tid"/>
                                     <constraint firstAttribute="height" constant="142" id="o3A-8H-zvG"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="143"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="120"/>
                                 <state key="normal" title="◼︎">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
