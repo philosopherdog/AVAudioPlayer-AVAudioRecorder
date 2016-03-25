@@ -15,6 +15,7 @@
 		AA66C8BA1CA2F86000B03E1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA66C8B81CA2F86000B03E1E /* LaunchScreen.storyboard */; };
 		AA66C8C51CA2F86000B03E1E /* AudioTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA66C8C41CA2F86000B03E1E /* AudioTests.m */; };
 		AA66C8D01CA2F86000B03E1E /* AudioUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA66C8CF1CA2F86000B03E1E /* AudioUITests.m */; };
+		AA66C8DE1CA2FC8700B03E1E /* dubstep.wav in Resources */ = {isa = PBXBuildFile; fileRef = AA66C8DD1CA2FC8700B03E1E /* dubstep.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		AA66C8CB1CA2F86000B03E1E /* AudioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AudioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA66C8CF1CA2F86000B03E1E /* AudioUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioUITests.m; sourceTree = "<group>"; };
 		AA66C8D11CA2F86000B03E1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA66C8DD1CA2FC8700B03E1E /* dubstep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dubstep.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +103,8 @@
 		AA66C8A91CA2F86000B03E1E /* Audio */ = {
 			isa = PBXGroup;
 			children = (
-				AA66C8AD1CA2F86000B03E1E /* AppDelegate.h */,
-				AA66C8AE1CA2F86000B03E1E /* AppDelegate.m */,
 				AA66C8B01CA2F86000B03E1E /* ViewController.h */,
 				AA66C8B11CA2F86000B03E1E /* ViewController.m */,
-				AA66C8B31CA2F86000B03E1E /* Main.storyboard */,
-				AA66C8B61CA2F86000B03E1E /* Assets.xcassets */,
-				AA66C8B81CA2F86000B03E1E /* LaunchScreen.storyboard */,
-				AA66C8BB1CA2F86000B03E1E /* Info.plist */,
 				AA66C8AA1CA2F86000B03E1E /* Supporting Files */,
 			);
 			path = Audio;
@@ -117,6 +113,13 @@
 		AA66C8AA1CA2F86000B03E1E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AA66C8DD1CA2FC8700B03E1E /* dubstep.wav */,
+				AA66C8AD1CA2F86000B03E1E /* AppDelegate.h */,
+				AA66C8AE1CA2F86000B03E1E /* AppDelegate.m */,
+				AA66C8B31CA2F86000B03E1E /* Main.storyboard */,
+				AA66C8B61CA2F86000B03E1E /* Assets.xcassets */,
+				AA66C8B81CA2F86000B03E1E /* LaunchScreen.storyboard */,
+				AA66C8BB1CA2F86000B03E1E /* Info.plist */,
 				AA66C8AB1CA2F86000B03E1E /* main.m */,
 			);
 			name = "Supporting Files";
@@ -245,6 +248,7 @@
 			files = (
 				AA66C8BA1CA2F86000B03E1E /* LaunchScreen.storyboard in Resources */,
 				AA66C8B71CA2F86000B03E1E /* Assets.xcassets in Resources */,
+				AA66C8DE1CA2FC8700B03E1E /* dubstep.wav in Resources */,
 				AA66C8B51CA2F86000B03E1E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
