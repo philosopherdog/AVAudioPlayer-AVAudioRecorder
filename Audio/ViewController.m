@@ -10,18 +10,17 @@
 @import MediaPlayer;
 @import AVFoundation;
 
-
 @interface ViewController ()<AVAudioPlayerDelegate, AVAudioRecorderDelegate>
-// Player
+
 @property (nonatomic)AVAudioPlayer *player;
-// Recorder
+
 @property (nonatomic) AVAudioRecorder *recorder;
 
 @property (nonatomic) NSURL *soundFileURL;
-
 @property (nonatomic) AVAudioSession *session;
 @property (weak, nonatomic) IBOutlet UIButton *recordButton;
 @property (weak, nonatomic) IBOutlet UIButton *playButton;
+@property (weak, nonatomic) IBOutlet UIButton *stopButton;
 
 @end
 
@@ -31,9 +30,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.session = [AVAudioSession sharedInstance];
     [self setupSoundFileURL];
-    [self setupSession];
     [self setupRecorder];
+    [self addGradient];
 }
 
 - (void)setupSoundFileURL {
@@ -41,14 +41,8 @@
     self.soundFileURL = [NSURL fileURLWithPathComponents:pathComponents];
 }
 
-- (void)setupSession {
-    self.session = [AVAudioSession sharedInstance];
-    NSError *error = nil;
-    [self.session setCategory:AVAudioSessionCategoryPlayAndRecord error:&error];
-    NSAssert(error == nil, @"%@", error.localizedDescription);
-}
-
 - (void)setupRecorder {
+    
     NSMutableDictionary *settings = [NSMutableDictionary dictionary];
     settings[AVFormatIDKey] = @(kAudioFormatMPEG4AAC);
     settings[AVSampleRateKey] = @(44100.0);
@@ -61,41 +55,29 @@
     [self.recorder prepareToRecord];
 }
 
-- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
-    
+- (void)addGradient {
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+    gradient.frame = self.view.bounds;
+    gradient.colors = @[(id)[[UIColor blackColor] CGColor],(id)[[UIColor whiteColor] CGColor]];
+    [self.view.layer insertSublayer:gradient atIndex:0];
 }
 
-- (void)audioRecorderDidFinishRecording:(AVAudioRecorder *)recorder successfully:(BOOL)flag {
-    
-}
+#pragma mark - Button Actions
 
 - (IBAction)playTapped:(UIButton *)sender {
     // code for playing the recorded sound
-    if (!self.recorder.recording){
-        self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:self.recorder.url error:nil];
-        self.player.delegate = self;
-        [self.player play];
+    if (self.recorder.isRecording) {
+        return;
     }
-    
-    // code for playing the dubstep wav file
-    
-    //    NSError *error = nil;
-    //    NSBundle *bundle = [NSBundle mainBundle];
-    //    NSURL *path = [bundle URLForResource:@"sound" withExtension:@"m4a"];
-    //    NSData *data = [NSData dataWithContentsOfURL:path];
-    //    self.player = [[AVAudioPlayer alloc] initWithData:data error:&error];
-    //    self.player.delegate = self;
-    //    if (error) {
-    //        NSLog(@"%@", error.localizedDescription);
-    //        return;
-    //    }
-    //    if ([self.player prepareToPlay] && [self.player play]) {
-    //        NSLog(@"played");
-    //    } else {
-    //        NSLog(@"something went wrong");
-    //    }
-    
-    
+    if (self.player.isPlaying) {
+        [self.player stop];
+        return;
+    }
+    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:self.recorder.url error:nil];
+    [self.session setCategory:AVAudioSessionCategoryPlayback error:nil];
+    self.player.delegate = self;
+    [self.player play];
+    self.recordButton.enabled = NO;
 }
 
 - (IBAction)recordTapped:(UIButton *)sender {
@@ -103,21 +85,40 @@
         [self.player stop];
     }
     if (!self.recorder.recording) {
-        //        AVAudioSession *session = [AVAudioSession sharedInstance];
         NSError *error = nil;
         [self.session setActive:YES error:&error];
-        
+        [self.session setCategory:AVAudioSessionCategoryRecord error:nil];
         NSAssert(error == nil, @"%@", error.localizedDescription);
-        
-        // Start recording
         [self.recorder record];
-        //        self.recordButton.enabled = NO;
-        // [recordPauseButton setTitle:@"Pause" forState:UIControlStateNormal];
+        self.playButton.enabled = NO;
+        
+        // swap buttons
+        [UIView animateWithDuration:10.0 animations:^{
+            self.stopButton.hidden = NO;
+            self.recordButton.hidden = YES;
+        }];
         
     } else {
         
         [self.recorder stop];
+        // swap buttons
+        [UIView animateWithDuration:10.0 animations:^{
+            self.stopButton.hidden = YES;
+            self.recordButton.hidden = NO;
+        }];
+        self.playButton.enabled = YES;
     }
+}
+
+#pragma mark - Delegate Methods
+
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
+    self.recordButton.enabled = YES;
+}
+
+- (void)audioRecorderDidFinishRecording:(AVAudioRecorder *)recorder successfully:(BOOL)flag {
+    self.recordButton.hidden = NO;
+    self.stopButton.hidden = YES;
 }
 
 @end

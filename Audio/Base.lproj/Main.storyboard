@@ -46,11 +46,29 @@
                                     <action selector="recordTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vwk-OR-FhR"/>
                                 </connections>
                             </button>
+                            <button hidden="YES" opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AYF-Q6-rTe">
+                                <rect key="frame" x="37" y="401" width="161" height="142"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="161" id="QBj-Fj-CXy"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="161" id="YrI-hM-xYh"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="142" id="hpV-FJ-tid"/>
+                                    <constraint firstAttribute="height" constant="142" id="o3A-8H-zvG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="143"/>
+                                <state key="normal" title="◼︎">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="recordTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MM6-SQ-D3K"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="T8B-wX-YoS" secondAttribute="bottom" constant="44" id="4WO-tV-D7A"/>
                             <constraint firstItem="1nS-z9-eSg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="17" id="De7-bZ-SEr"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="AYF-Q6-rTe" secondAttribute="bottom" constant="57" id="J4c-sq-68Y"/>
+                            <constraint firstItem="AYF-Q6-rTe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="17" id="bQL-Va-kyp"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1nS-z9-eSg" secondAttribute="bottom" constant="44" id="hIa-ew-rkX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="T8B-wX-YoS" secondAttribute="trailing" constant="5" id="jHh-PY-hYI"/>
                         </constraints>
@@ -58,6 +76,7 @@
                     <connections>
                         <outlet property="playButton" destination="T8B-wX-YoS" id="IPf-9C-uI5"/>
                         <outlet property="recordButton" destination="1nS-z9-eSg" id="jN0-sl-llo"/>
+                        <outlet property="stopButton" destination="AYF-Q6-rTe" id="hVu-1y-oB8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
