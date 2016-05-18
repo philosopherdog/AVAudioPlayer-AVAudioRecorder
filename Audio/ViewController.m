@@ -54,17 +54,6 @@
     [self.recorder prepareToRecord];
 }
 
-- (void)addGradient {
-    CAGradientLayer *gradient = [CAGradientLayer layer];
-    gradient.colors = @[(id)[[UIColor blackColor] CGColor],(id)[[UIColor whiteColor] CGColor]];
-    gradient.frame = self.gradientView.frame;
-    [self.gradientView.layer addSublayer:gradient];
-}
-
-- (void)viewDidLayoutSubviews {
-    [self addGradient];
-}
-
 #pragma mark - Button Actions
 
 - (IBAction)playTapped:(UIButton *)sender {
