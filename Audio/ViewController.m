@@ -21,7 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *recordButton;
 @property (weak, nonatomic) IBOutlet UIButton *playButton;
 @property (weak, nonatomic) IBOutlet UIButton *stopButton;
-
+@property (weak, nonatomic) IBOutlet UIView *gradientView;
 @end
 
 @implementation ViewController
@@ -33,7 +33,6 @@
     self.session = [AVAudioSession sharedInstance];
     [self setupSoundFileURL];
     [self setupRecorder];
-    [self addGradient];
 }
 
 - (void)setupSoundFileURL {
@@ -57,9 +56,13 @@
 
 - (void)addGradient {
     CAGradientLayer *gradient = [CAGradientLayer layer];
-    gradient.frame = self.view.bounds;
     gradient.colors = @[(id)[[UIColor blackColor] CGColor],(id)[[UIColor whiteColor] CGColor]];
-    [self.view.layer insertSublayer:gradient atIndex:0];
+    gradient.frame = self.gradientView.frame;
+    [self.gradientView.layer addSublayer:gradient];
+}
+
+- (void)viewDidLayoutSubviews {
+    [self addGradient];
 }
 
 #pragma mark - Button Actions
