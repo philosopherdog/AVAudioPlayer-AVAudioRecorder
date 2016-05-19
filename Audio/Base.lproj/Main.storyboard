@@ -17,87 +17,67 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sk7-rZ-RJz">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="7Dz-Kz-kZB">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                    </imageView>
-                                    <button hidden="YES" opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AYF-Q6-rTe">
-                                        <rect key="frame" x="142" y="492" width="100" height="100"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="C4v-QS-Kdv"/>
-                                            <constraint firstAttribute="height" constant="100" id="hpV-FJ-tid"/>
-                                        </constraints>
-                                        <state key="normal" image="stop">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="recordTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MM6-SQ-D3K"/>
-                                        </connections>
-                                    </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hmh-ms-gEM" userLabel="Dummy View">
-                                        <rect key="frame" x="250" y="492" width="100" height="100"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="Dh8-OI-cxX"/>
-                                            <constraint firstAttribute="width" constant="100" id="hWV-4h-PGx"/>
-                                        </constraints>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nS-z9-eSg">
-                                        <rect key="frame" x="142" y="492" width="100" height="100"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="MBG-yx-ZcM"/>
-                                            <constraint firstAttribute="width" constant="100" id="hSf-GU-M1A"/>
-                                        </constraints>
-                                        <state key="normal" image="record">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="recordTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vwk-OR-FhR"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T8B-wX-YoS">
-                                        <rect key="frame" x="358" y="492" width="100" height="100"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="owE-T5-sfh"/>
-                                            <constraint firstAttribute="height" constant="100" id="uZv-yw-0HS"/>
-                                        </constraints>
-                                        <state key="normal" image="play">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="playTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JT6-1n-ztR"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <button hidden="YES" opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AYF-Q6-rTe">
+                                <rect key="frame" x="142" y="480" width="100" height="100"/>
                                 <constraints>
-                                    <constraint firstItem="T8B-wX-YoS" firstAttribute="leading" secondItem="Hmh-ms-gEM" secondAttribute="trailing" constant="8" id="4Hz-bF-Ukn"/>
-                                    <constraint firstItem="Hmh-ms-gEM" firstAttribute="leading" secondItem="AYF-Q6-rTe" secondAttribute="trailing" constant="8" id="8Az-Tw-WR1"/>
-                                    <constraint firstAttribute="bottom" secondItem="T8B-wX-YoS" secondAttribute="bottom" constant="8" id="BVW-bi-ROL"/>
-                                    <constraint firstAttribute="trailing" secondItem="7Dz-Kz-kZB" secondAttribute="trailing" id="Cah-gX-N5f"/>
-                                    <constraint firstAttribute="bottom" secondItem="7Dz-Kz-kZB" secondAttribute="bottom" id="DXN-u7-88B"/>
-                                    <constraint firstItem="Hmh-ms-gEM" firstAttribute="leading" secondItem="1nS-z9-eSg" secondAttribute="trailing" constant="8" id="XUT-IW-df5"/>
-                                    <constraint firstAttribute="bottom" secondItem="Hmh-ms-gEM" secondAttribute="bottom" constant="8" id="ZYU-oB-yEH"/>
-                                    <constraint firstItem="7Dz-Kz-kZB" firstAttribute="top" secondItem="Sk7-rZ-RJz" secondAttribute="top" id="and-SE-x2A"/>
-                                    <constraint firstAttribute="bottom" secondItem="AYF-Q6-rTe" secondAttribute="bottom" constant="8" id="hVl-Xe-7U4"/>
-                                    <constraint firstAttribute="bottom" secondItem="1nS-z9-eSg" secondAttribute="bottom" constant="8" id="ocd-UI-wiO"/>
-                                    <constraint firstItem="Hmh-ms-gEM" firstAttribute="centerX" secondItem="Sk7-rZ-RJz" secondAttribute="centerX" id="pHG-PW-yw5"/>
-                                    <constraint firstItem="7Dz-Kz-kZB" firstAttribute="leading" secondItem="Sk7-rZ-RJz" secondAttribute="leading" id="xWv-kx-6Ar"/>
+                                    <constraint firstAttribute="height" constant="100" id="Srj-84-mA7"/>
+                                    <constraint firstAttribute="width" constant="100" id="Swq-9H-Qda"/>
+                                </constraints>
+                                <state key="normal" image="stop">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="recordTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MM6-SQ-D3K"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nS-z9-eSg">
+                                <rect key="frame" x="142" y="480" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="2iS-Iu-SDG"/>
+                                    <constraint firstAttribute="height" constant="100" id="hhJ-bg-TuO"/>
+                                </constraints>
+                                <state key="normal" image="record">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="recordTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vwk-OR-FhR"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hmh-ms-gEM" userLabel="Dummy View">
+                                <rect key="frame" x="250" y="480" width="100" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="ADT-Hd-Otr"/>
+                                    <constraint firstAttribute="height" constant="100" id="SAC-dh-0Af"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T8B-wX-YoS">
+                                <rect key="frame" x="358" y="480" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="IbE-n6-TLY"/>
+                                    <constraint firstAttribute="height" constant="100" id="k6X-9C-Wru"/>
+                                </constraints>
+                                <state key="normal" image="play">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JT6-1n-ztR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Sk7-rZ-RJz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9VQ-M6-cqd"/>
-                            <constraint firstAttribute="trailing" secondItem="Sk7-rZ-RJz" secondAttribute="trailing" id="Uxt-6q-Ay9"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Sk7-rZ-RJz" secondAttribute="bottom" id="du7-ie-TiP"/>
-                            <constraint firstItem="Sk7-rZ-RJz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="zF7-5M-ZNA"/>
+                            <constraint firstItem="T8B-wX-YoS" firstAttribute="leading" secondItem="Hmh-ms-gEM" secondAttribute="trailing" constant="8" id="GAG-ip-Gsr"/>
+                            <constraint firstItem="Hmh-ms-gEM" firstAttribute="leading" secondItem="AYF-Q6-rTe" secondAttribute="trailing" constant="8" id="Pdz-rA-lEB"/>
+                            <constraint firstItem="Hmh-ms-gEM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zsv-iR-lT4"/>
+                            <constraint firstItem="T8B-wX-YoS" firstAttribute="bottom" secondItem="Hmh-ms-gEM" secondAttribute="bottom" id="cah-JL-dqu"/>
+                            <constraint firstItem="Hmh-ms-gEM" firstAttribute="leading" secondItem="1nS-z9-eSg" secondAttribute="trailing" constant="8" id="gGq-dc-WsD"/>
+                            <constraint firstItem="1nS-z9-eSg" firstAttribute="bottom" secondItem="Hmh-ms-gEM" secondAttribute="bottom" id="gu4-zk-fIe"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Hmh-ms-gEM" secondAttribute="bottom" constant="20" id="hVI-EO-u3j"/>
+                            <constraint firstItem="AYF-Q6-rTe" firstAttribute="bottom" secondItem="Hmh-ms-gEM" secondAttribute="bottom" id="iA8-HN-x8C"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="gradientView" destination="Sk7-rZ-RJz" id="lAz-zm-HEa"/>
                         <outlet property="playButton" destination="T8B-wX-YoS" id="IPf-9C-uI5"/>
                         <outlet property="recordButton" destination="1nS-z9-eSg" id="jN0-sl-llo"/>
                         <outlet property="stopButton" destination="AYF-Q6-rTe" id="hVu-1y-oB8"/>
@@ -109,7 +89,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bg" width="389" height="736"/>
         <image name="play" width="211" height="211"/>
         <image name="record" width="211" height="211"/>
         <image name="stop" width="211" height="211"/>

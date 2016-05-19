@@ -30,6 +30,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg"]];
     self.session = [AVAudioSession sharedInstance];
     [self setupSoundFileURL];
     [self setupRecorder];
