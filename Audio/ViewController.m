@@ -21,7 +21,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *recordButton;
 @property (weak, nonatomic) IBOutlet UIButton *playButton;
 @property (weak, nonatomic) IBOutlet UIButton *stopButton;
-@property (weak, nonatomic) IBOutlet UIView *gradientView;
 @end
 
 @implementation ViewController
@@ -83,22 +82,22 @@
         [self.session setCategory:AVAudioSessionCategoryRecord error:nil];
         NSAssert(error == nil, @"%@", error.localizedDescription);
         [self.recorder record];
+        
+        // disable play button
         self.playButton.enabled = NO;
         
-        // swap buttons
-        [UIView animateWithDuration:10.0 animations:^{
-            self.stopButton.hidden = NO;
-            self.recordButton.hidden = YES;
-        }];
+        // show stop, hide record
+        
+        self.stopButton.hidden = NO;
+        self.recordButton.hidden = YES;
         
     } else {
         
         [self.recorder stop];
+        
         // swap buttons
-        [UIView animateWithDuration:10.0 animations:^{
-            self.stopButton.hidden = YES;
-            self.recordButton.hidden = NO;
-        }];
+        self.stopButton.hidden = YES;
+        self.recordButton.hidden = NO;
         self.playButton.enabled = YES;
     }
 }
@@ -110,6 +109,7 @@
 }
 
 - (void)audioRecorderDidFinishRecording:(AVAudioRecorder *)recorder successfully:(BOOL)flag {
+    // show record again, and hide stop
     self.recordButton.hidden = NO;
     self.stopButton.hidden = YES;
 }
